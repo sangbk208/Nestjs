@@ -8,12 +8,16 @@ async function bootstrap() {
 
   app.enableCors();
 
-  app.useGlobalPipes(new ValidationPipe())
+  app.useGlobalPipes(new ValidationPipe());
 
-  const config = new DocumentBuilder().setTitle('Nest API').setDescription('The description of the nest API').setVersion('1.0').build();
+  const config = new DocumentBuilder()
+    .setTitle('Nest API')
+    .setDescription('The description of the nest API')
+    .setVersion('1.0')
+    .build();
 
-  const document = SwaggerModule.createDocument(app, config)
-  SwaggerModule.setup('/documentation', app, document)
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('/documentation', app, document);
 
   await app.listen(3000);
 }

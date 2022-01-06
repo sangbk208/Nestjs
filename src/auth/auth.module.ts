@@ -7,19 +7,21 @@ import { JwtModule } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
 import { LocalStrategy } from './strategies/local.strategy';
 import { JwtStrategy } from './strategies/jwt.strategy';
+import { MailModule } from 'src/mail/mail.module';
 
 @Module({
   providers: [AuthService, LocalStrategy, JwtStrategy],
   controllers: [AuthController],
   imports: [
-    MongooseModule.forFeature([{name: User.name ,schema: userSchema}]),
+    MongooseModule.forFeature([{ name: User.name, schema: userSchema }]),
     JwtModule.registerAsync({
       inject: [ConfigService],
       useFactory: async (config: ConfigService) => ({
         secret: config.get<string>('JWT_KEY'),
-        signOptions: { expiresIn: '1d' }
+        signOptions: { expiresIn: '1d' },
       }),
-  })
-],
+    }),
+    MailModule,
+  ],
 })
 export class AuthModule {}

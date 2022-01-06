@@ -13,6 +13,11 @@ export class User {
 
   @Prop()
   password: string;
+
+  @Prop({
+    default: false,
+  })
+  verified: boolean;
 }
 
 export const userSchema = SchemaFactory.createForClass(User);
