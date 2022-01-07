@@ -8,7 +8,7 @@ import { User, UserDocument } from 'src/users/schemas/user.schema';
 import { LoginDto } from './dto/login.dto';
 import { Model } from 'mongoose';
 import { JwtService } from '@nestjs/jwt';
-import { SignUpDto } from './dto/signUp.dto';
+import { SignUpDto } from './dto/signup.dto';
 import * as bcrypt from 'bcrypt';
 import { ForgotPasswordDto } from './dto/forgotPassword.dto';
 import { ResetPasswordDto } from './dto/reset-password.dto';

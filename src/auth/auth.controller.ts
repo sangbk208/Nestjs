@@ -14,7 +14,7 @@ import { AuthService } from './auth.service';
 import { ForgotPasswordDto } from './dto/forgotPassword.dto';
 import { ResetPasswordDto } from './dto/reset-password.dto';
 import { VerifyUserDto } from './dto/verify-user.dto';
-import { SignUpDto } from './dto/signUp.dto';
+import { SignUpDto } from './dto/signup.dto';
 import { LocalAuthGuard } from './guard/local-auth.guard';
 
 @Controller('auth')
